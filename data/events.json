@@ -1,0 +1,52 @@
+[
+  {
+    "date": "2026-12-06",
+    "time": "11:00〜11:30",
+    "place": "サンプル会場C",
+    "title": "出演予定サンプル（12月）",
+    "note": "",
+    "event_url": "",
+    "status": "scheduled",
+    "published": true
+  },
+  {
+    "date": "2026-11-01",
+    "time": "12:00〜12:30",
+    "place": "非公開サンプル会場",
+    "title": "非公開のサンプル予定",
+    "note": "published が false のため、サイトには出ません。",
+    "event_url": "",
+    "status": "scheduled",
+    "published": false
+  },
+  {
+    "date": "2026-11-20",
+    "time": "15:00〜15:30",
+    "place": "サンプル会場B",
+    "title": "中止サンプル",
+    "note": "開催状況の確認用です。",
+    "event_url": "",
+    "status": "canceled",
+    "published": true
+  },
+  {
+    "date": "2026-06-14",
+    "time": "13:00〜13:30",
+    "place": "サンプル会場（過去）",
+    "title": "過去日のサンプル",
+    "note": "当日より前のため、一覧には出ません。",
+    "event_url": "",
+    "status": "scheduled",
+    "published": true
+  },
+  {
+    "date": "2026-11-15",
+    "time": "13:00〜13:30 / 16:00〜16:30",
+    "place": "サンプル会場A",
+    "title": "出演予定サンプル",
+    "note": "雨天中止の可能性があります（記号確認: A < B & C）",
+    "event_url": "",
+    "status": "scheduled",
+    "published": true
+  }
+]

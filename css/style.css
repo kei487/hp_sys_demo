@@ -1,0 +1,178 @@
+/* デザイン設定。文章の更新は data/*.json と Pages CMS で行う。 */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, ul, ol, li, h1, h2, h3, p, dl, dt, dd, figure { margin: 0; padding: 0; }
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  line-height: 1.75;
+  color: #1a1a2e;
+  background: #fff8f0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+a { color: #c0392b; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { width: min(800px, 92%); margin: 0 auto; }
+header {
+  background: linear-gradient(135deg, #e74c3c, #f39c12);
+  color: #fff;
+  padding: 2rem 0 1.5rem;
+  border-bottom: 4px solid #1a1a2e;
+}
+.demo-notice {
+  display: block;
+  max-width: 100%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 4px;
+  padding: 0.45rem 0.7rem;
+  margin-bottom: 1rem;
+}
+.site-name { font-size: clamp(1.75rem, 6vw, 2.5rem); font-weight: 800; overflow-wrap: anywhere; }
+.site-name a { color: inherit; }
+.site-tagline { margin-top: 0.35rem; font-size: 0.9rem; overflow-wrap: anywhere; }
+nav { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; margin-top: 1.25rem; font-size: 0.9rem; font-weight: 600; }
+nav a { color: #fff; padding: 0.35rem 0; }
+main { padding: 2.5rem 0 4rem; }
+section { margin-bottom: 2.5rem; }
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid #e74c3c;
+}
+#profile h2:not(:first-child) { margin-top: 2rem; }
+.lead { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; line-height: 1.35; margin-bottom: 1rem; }
+.text { color: #444; }
+.multiline { white-space: pre-line; }
+.hero-image {
+  width: 100%;
+  height: auto;
+  margin-top: 1.25rem;
+  border-radius: 8px;
+  background: #fff;
+}
+.next-box {
+  background: #fff;
+  border: 2px solid #1a1a2e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 4px 4px 0 #1a1a2e;
+}
+.next-date { font-size: 1.1rem; font-weight: 700; color: #e74c3c; }
+.next-title { font-size: 1.2rem; font-weight: 700; margin: 0.5rem 0; overflow-wrap: anywhere; }
+.next-detail, .next-note { color: #555; margin-bottom: 1rem; overflow-wrap: anywhere; }
+.next-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border: 2px solid #1a1a2e;
+}
+.btn:hover { text-decoration: none; background: #2d2d44; }
+.btn-secondary { background: #fff; color: #1a1a2e; }
+.btn-secondary:hover { background: #fff3e0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; overflow-wrap: anywhere; }
+th { background: #1a1a2e; color: #fff; }
+tr:last-child td { border-bottom: none; }
+tr.next { background: #fff3e0; }
+tr.canceled td { color: #555; }
+.note { margin-top: 0.75rem; font-size: 0.8rem; color: #666; }
+.badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: #7f1d1d;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.event-link { display: inline-block; margin-top: 0.25rem; font-weight: 600; overflow-wrap: anywhere; }
+.event-cards { display: none; list-style: none; gap: 0.75rem; }
+.event-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+}
+.event-card.next { background: #fff3e0; border-color: #e7c9a0; }
+.event-card.canceled { background: #f6f6f6; }
+.event-card-date { font-weight: 700; color: #e74c3c; }
+.event-card-title { font-weight: 700; margin: 0.25rem 0 0.5rem; overflow-wrap: anywhere; }
+.event-card dl { display: grid; gap: 0.35rem; }
+.event-card div { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.35rem; }
+.event-card dt { color: #888; font-size: 0.8rem; }
+.event-card dd { margin: 0; overflow-wrap: anywhere; }
+.cards { list-style: none; display: grid; gap: 1rem; }
+.cards li { background: #fff; border: 1px solid #f0d9b5; border-left: 4px solid #f39c12; border-radius: 6px; padding: 1.25rem; }
+.cards h3 { font-size: 1rem; color: #c0392b; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+.cards p { font-size: 0.9rem; color: #555; overflow-wrap: anywhere; }
+.cards img { width: 100%; height: auto; border-radius: 4px; margin-bottom: 0.75rem; background: #fff; }
+.profile { display: grid; grid-template-columns: 7rem 1fr; gap: 0.5rem 1rem; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 1.25rem; }
+.profile dt { font-weight: 700; color: #666; font-size: 0.875rem; }
+.profile dd { overflow-wrap: anywhere; }
+.profile-photo { width: 7rem; max-width: 100%; height: auto; border-radius: 8px; display: block; margin-bottom: 1rem; background: #fff; }
+.biography { margin-top: 1.25rem; }
+.history { list-style: none; }
+.history li { display: flex; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid #eee; color: #444; }
+.history li:last-child { border-bottom: none; }
+.history .year { flex: 0 0 6.5rem; font-size: 0.875rem; color: #888; font-weight: 600; }
+.history .desc { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.achievements { padding-left: 1.25rem; color: #444; }
+.achievements li { margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+.gallery {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+}
+.gallery figure { margin: 0; background: #fff; border: 1px solid #f0d9b5; border-radius: 6px; overflow: hidden; }
+.gallery img { width: 100%; height: auto; display: block; background: #fff; }
+.gallery figcaption { padding: 0.6rem 0.75rem; font-size: 0.85rem; color: #555; overflow-wrap: anywhere; }
+.contact-box { background: #fff; border: 2px dashed #e74c3c; border-radius: 8px; padding: 1.25rem; }
+.contact-box p + p { margin-top: 0.75rem; }
+.contact-box .email { font-weight: 700; color: #c0392b; overflow-wrap: anywhere; }
+.empty-message { color: #444; }
+.load-error {
+  background: #fff;
+  border: 1px solid #e74c3c;
+  color: #9b2c2c;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+}
+footer { background: #1a1a2e; color: #aaa; padding: 1.5rem 0; text-align: center; font-size: 0.8rem; }
+footer a { color: #f39c12; }
+footer p + p { margin-top: 0.35rem; }
+@media (max-width: 720px) {
+  .event-table { display: none; }
+  .event-cards { display: grid; }
+  .profile { grid-template-columns: 1fr; }
+  .history li { flex-direction: column; gap: 0.15rem; }
+  .next-box { padding: 1.1rem; }
+}

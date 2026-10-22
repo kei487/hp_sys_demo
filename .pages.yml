@@ -1,0 +1,199 @@
+# Pages CMS の編集画面定義。
+# 保存時に、ここに無い項目は JSON から消されることがある。
+# data/*.json のキーと fields.name を一致させる。
+
+media:
+  input: images
+  output: /images
+  rename: safe
+  categories:
+    - image
+
+content:
+  - name: events
+    label: 出演スケジュール
+    type: file
+    path: data/events.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: date
+        label: 出演日
+        type: date
+        required: true
+        description: カレンダーから選んでください。この日がサイトの並び順になります。
+        options:
+          format: yyyy-MM-dd
+      - name: time
+        label: 出演時間
+        type: string
+        description: 複数回あるときは「13:00〜13:30 / 16:00〜16:30」のように書けます。
+      - name: place
+        label: 場所
+        type: string
+      - name: title
+        label: イベント名
+        type: string
+        required: true
+      - name: note
+        label: 備考
+        type: text
+        description: 雨天時の扱いなど。空欄でも構いません。
+      - name: event_url
+        label: イベントページのURL
+        type: string
+        description: 空欄でも構いません。http または https のアドレスだけがリンクになります。
+      - name: status
+        label: 開催状況
+        type: select
+        required: true
+        description: 中止にすると一覧に「中止」と出て、「次の出演」からは外れます。
+        options:
+          values:
+            - name: scheduled
+              label: 開催予定
+            - name: canceled
+              label: 中止
+      - name: published
+        label: サイトに公開する
+        type: boolean
+        default: true
+        description: オフにすると、この予定はサイトに表示されません。
+
+  - name: site
+    label: 基本情報
+    type: file
+    path: data/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: stage_name
+        label: 芸名
+        type: string
+        required: true
+      - name: tagline
+        label: 肩書き
+        type: string
+        description: ヘッダーに出る短い説明です。例）大道芸人 / パントマイム
+      - name: catchphrase
+        label: キャッチコピー
+        type: text
+        description: 改行はそのままページに反映されます。
+      - name: introduction
+        label: 紹介文
+        type: text
+      - name: genre
+        label: ジャンル
+        type: string
+      - name: area
+        label: 活動エリア
+        type: string
+      - name: duration
+        label: 出演時間
+        type: string
+        description: 1回の出演の長さです。スケジュールの時刻とは別の欄です。
+      - name: biography
+        label: プロフィール文
+        type: text
+      - name: hero_image
+        label: トップ画像
+        type: image
+        description: 未設定でもページは表示されます。
+      - name: profile_image
+        label: プロフィール画像
+        type: image
+        description: 未設定でもページは表示されます。
+      - name: contact_message
+        label: 問い合わせ案内
+        type: text
+      - name: contact_email
+        label: メールアドレス
+        type: string
+        description: 空欄のときはメールリンクを出しません。
+      - name: instagram_url
+        label: InstagramのURL
+        type: string
+        description: 空欄でも構いません。
+      - name: inquiry_url
+        label: 問い合わせフォームのURL
+        type: string
+        description: 空欄でも構いません。
+
+  - name: performances
+    label: パフォーマンス内容
+    type: file
+    path: data/performances.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: title
+        label: 演目名
+        type: string
+        required: true
+      - name: description
+        label: 説明
+        type: text
+      - name: image
+        label: 画像
+        type: image
+        description: 未設定でもカードは表示されます。
+
+  - name: history
+    label: 経歴
+    type: file
+    path: data/history.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: period
+        label: 時期
+        type: string
+        description: 例）2022– や 2020–2022
+      - name: description
+        label: 内容
+        type: text
+        required: true
+
+  - name: achievements
+    label: 出演実績
+    type: file
+    path: data/achievements.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: description
+        label: 内容
+        type: text
+        required: true
+
+  - name: gallery
+    label: 写真ギャラリー
+    type: file
+    path: data/gallery.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: image
+        label: 画像
+        type: image
+        required: true
+      - name: alt_text
+        label: 代替テキスト
+        type: string
+        required: true
+        description: 写真の内容を短く書いてください。画面読み上げで使われます。
+      - name: caption
+        label: キャプション
+        type: text
+        description: 写真の下に表示する文章です。空欄でも構いません。
