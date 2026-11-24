@@ -1,7 +1,12 @@
 [
   {
     "image": "/images/sample-mark.svg",
-    "caption": "動作確認用のサンプル図です。本番公開前に削除してください。",
-    "alt_text": "動作確認用のサンプル図形。人物写真ではありません。"
+    "alt_text": "動作確認用のサンプル図形。人物写真ではありません。",
+    "caption": "動作確認用のサンプル図です。本番公開前に削除してください。"
+  },
+  {
+    "image": "/images/file.png",
+    "alt_text": "uwa-",
+    "caption": "うわー"
   }
 ]
